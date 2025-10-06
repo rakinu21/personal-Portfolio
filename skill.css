@@ -1,0 +1,346 @@
+
+
+
+
+:root {
+  /* Base Colors */
+  --color-bg: #0d0d0d;          /* Main background */
+  --color-surface: #1a1a1a;     /* Cards, navbars, panels */
+  --color-border: #2a2a2a;      /* Borders & dividers */
+  
+  /* Text Colors */
+  --color-text: #e0e0e0;        /* Primary text */
+  --color-text-muted: #a0a0a0;  /* Secondary text */
+  --color-heading: #ffffff;     /* Bright headlines */
+  
+  /* Accent Colors */
+  --color-accent: #ec9533;        /* Vibrant orange (primary accent) */
+  --color-accent-hover: #d47f20;  /* Deeper orange on hover */
+  --color-accent-alt: #f778ba;    /* Optional pink accent for highlights */
+
+  /* Buttons */
+  --btn-bg: var(--color-accent);
+  --btn-text: #ffffff;
+  --btn-hover-bg: var(--color-accent-hover);
+  
+  /* Navbar */
+  --navbar-bg: var(--color-surface);
+  --navbar-text: var(--color-text);
+  
+  /* Shadows */
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  /* font family */
+
+     --primary-font:"Inter", sans-serif;
+    --secondary-font: "Bebas Neue", sans-serif;
+}
+
+
+
+.skills {
+
+  height: 100vh;
+ 
+  position: sticky;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+
+
+  .skills-picture {
+    position: relative; /* 👈 allows text overlay */
+    width: 100vw;
+    height: 40vh;
+    background-image: url('./assets/about-bg-mountain.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+     transition: all 2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .skills-text {
+      position: absolute;
+      color: white;
+      text-align: center;
+      padding: 1rem 2rem;
+      z-index: 3;
+
+      h2 {
+        font-size: 12vw;
+        font-weight: 700;
+        line-height: 11vw;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: var(--secondary-font);
+      }
+
+      p {
+        font-size: 3rem;
+        font-weight: 500;
+        opacity: 0.9;
+        font-family: var(--secondary-font);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 2;
+    }
+  }
+
+
+  /* 🔽 new icon section */
+  
+   /* 🔽 Infinite scroll icons */
+  .icons-skills {
+
+    overflow: hidden;
+  
+    width: 100%;
+  
+  
+    padding: 2rem 0;
+   display: flex;
+   gap: 2rem;
+   flex-direction: column;
+ 
+  justify-content: center;
+
+    .icons-track {
+      display: flex;
+      gap: 2rem;
+
+      
+       animation: marquee 30s linear infinite alternate;
+
+       &:nth-child(2){
+         animation: marquee-reverse 30s linear infinite alternate;
+         
+       }
+    }
+
+    .skill {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+    
+      border-radius: 12px;
+      
+  width: clamp(150px, 25vw, 320px); 
+  height: clamp(120px, 20vw, 200px); 
+
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .icon {
+        font-size: 5rem;
+        color: var(--color-text);
+        
+      }
+
+      .label {
+        font-size: 2rem;
+        color: var(--color-text);
+        font-family: var(--secondary-font);
+      }
+    }
+
+    /* Brand colors (optional highlights) */
+    /* .html .icon { color: #e34f26; }
+    .css .icon { color: #1572b6; }
+    .js .icon { color: #f7df1e; }
+    .react .icon { color: #61dafb; }
+    .node .icon { color: #3c873a; }
+    .php .icon { color: #777bb4; }
+    .laravel .icon { color: #fb503b; }
+    .git .icon { color: #f1502f; }
+    .github .icon { color: #fff; }
+    .sass .icon { color: #cf649a; }
+    .tailwind .icon { color: #06b6d4; }
+    .framer-motion .icon { color: #e91e63; }
+    .gsap .icon { color: #88d27f; }
+    .jwt .icon { color: #f0a500; } */
+  }
+
+
+
+}
+
+  @keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); } 
+}
+
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+#skills-title, #skills-desc {
+  transition: all 0.6s ease-in-out;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+
+
+
+
+.contact {
+  width: 100dvw;
+  height: 60vh;
+  position: sticky;
+  margin-top: 300px;
+  top: 40vh;
+  left: 0;
+  z-index: 3;
+  background: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--primary-font);
+
+
+  .container {
+    width: 90%;
+  
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--black-color);
+    border-bottom: 1px solid var(--black-color);
+    display: flex;
+    flex-direction: column;
+
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 4rem;
+
+      /* === LEFT (Form Section) === */
+      .left {
+        flex: 1 ;
+        flex-basis: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4rem;
+
+
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+
+          .form-group {
+
+            color: var(--color-bg);
+            input,
+            textarea {
+              width: 100%;
+              padding: 1rem 1.2rem;
+              border-radius: 0.6rem;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              
+              font-size: 1rem;
+              transition: all 0.3s ease;
+
+              &:focus {
+                outline: none;
+                border-color: var(--color-bg);
+                background: #fff;
+                box-shadow: 0 0 0 3px var(--shadow-soft);
+              }
+            }
+
+            textarea {
+              min-height: 130px;
+              resize: none;
+            }
+          }
+
+          .contact-btn {
+           background-color: var(--color-bg);
+         
+            color: var(--btn-text);
+           border: none;
+            border-radius: 0.6rem;
+            padding: 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: #005bcc;
+              transform: translateY(-2px);
+              box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+      }
+
+      /* === RIGHT (Social Links Section) === */
+     /* === RIGHT (Social Links Section) === */
+.right {
+  flex: 1;
+  flex-basis: 500px;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* pushes to bottom */
+  align-items: flex-end;     /* positions block to the right side */
+  gap: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--black-color);
+    margin: 0;
+    text-transform: capitalize;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* align icon + text left */
+      gap: 0.8rem;
+      color: var(--color-bg);
+      text-decoration: none;
+      width: 200px; /* fixed width for clean left alignment */
+      text-align: left; /* ensures inner text lines up */
+      transition: color 0.3s ease, transform 0.3s ease;
+      font-size: 2.4rem;
+      letter-spacing: -3px;
+
+     
+      }
+    }
+  }
+}
+
+    }
+  }
+
+ 

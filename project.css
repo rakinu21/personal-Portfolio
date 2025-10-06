@@ -1,0 +1,192 @@
+
+
+:root {
+  /* Base Colors */
+  --color-bg: #0d0d0d;          /* Main background */
+  --color-surface: #1a1a1a;     /* Cards, navbars, panels */
+  --color-border: #2a2a2a;      /* Borders & dividers */
+  
+  /* Text Colors */
+  --color-text: #e0e0e0;        /* Primary text */
+  --color-text-muted: #a0a0a0;  /* Secondary text */
+  --color-heading: #ffffff;     /* Bright headlines */
+  
+  /* Accent Colors */
+  --color-accent: #ec9533;        /* Vibrant orange (primary accent) */
+  --color-accent-hover: #d47f20;  /* Deeper orange on hover */
+  --color-accent-alt: #f778ba;    /* Optional pink accent for highlights */
+
+  /* Buttons */
+  --btn-bg: var(--color-accent);
+  --btn-text: #ffffff;
+  --btn-hover-bg: var(--color-accent-hover);
+  
+  /* Navbar */
+  --navbar-bg: var(--color-surface);
+  --navbar-text: var(--color-text);
+  
+  /* Shadows */
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  /* font family */
+
+     --primary-font:"Inter", sans-serif;
+    --secondary-font: "Bebas Neue", sans-serif;
+}
+
+
+.project {
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+ position: sticky;
+
+ top: 0;
+ left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding: 2rem;
+ 
+
+  .project-tag-text {
+   
+    height: 10rem;
+    width: inherit;
+ 
+    text-align: center;
+    .project-text {
+      font-family: var(--secondary-font);
+      font-size: 10vw;
+      color: var(--color-bg);
+      font-weight: 700;
+      line-height: 10rem;
+    
+      
+    }
+  }
+
+ #projects-list {
+  width: 100vw;             
+  padding: 2rem 4rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% ,-50%);
+  
+
+  .projects-row {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 2rem;
+    align-items: center;
+  padding-right: 10rem;
+    perspective: 2500px;   /* 👈 allows 3D depth */
+  }
+
+  .project-card {
+    flex: 0 0 auto;
+    height: 500px;
+    min-width: 400px;
+    width: 400px;
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    font-family: var(--secondary-font);
+    border-radius: 1.2rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    text-align: center;
+    transition: 
+      transform 0.4s ease,
+      box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    
+    cursor: pointer;
+     
+    /* Hover: lift up and tilt */
+    &:hover {
+      transform: translateY(-15px) rotateY(8deg) rotateX(4deg) scale(1.03);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    }
+
+    /* Index badge */
+    .project-index {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+   
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.5rem;
+      display: flex;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(6px);
+      width: 100%;
+      
+      
+      .index{
+        width: 80px;
+        height: 80px;
+        border: 2px solid var(--color-border);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 30px;
+        font-size: 4rem;
+        border-radius: 10px;
+      }
+
+    }
+
+    h2 {
+      font-size: 3.6rem;
+      line-height: 3rem;
+      margin-bottom: 0.75rem;
+      font-family: var(--secondary-font);
+      }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .projectbtn {
+     
+      padding: 0.8rem 3rem;
+      letter-spacing: 1px;
+    
+      border: 1px solid var(--color-text);
+    background-color: transparent;
+    color: #a0a0a0;
+      border-radius: 0.7rem;
+  
+      transition: all 0.5s ease-in-out;
+  
+
+      &:hover {
+     
+       color: var(--color-text);
+       padding: 1rem 4rem;
+       overflow: hidden;
+    }
+
+}
+
+
+
+}
+
+ }
+
+ .project-bottom{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--color-text);
+   height: 40%;
+   z-index: -2;
+ }
+}
