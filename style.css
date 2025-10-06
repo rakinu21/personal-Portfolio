@@ -76,18 +76,26 @@ main{
  
 
 
-    .shape-slide {
+    .line-container {
   position: fixed;
+  display: flex;
+  gap: 2rem;
   bottom: 10px;
   left: 0;
   width: 100dvw;
+  border: 2px solid red;
   overflow: hidden;
-  z-index: -2;
+ z-index: 1;
+ background-color: transparent;
+ opacity: 0.1;
 
-  .shape-track {
+  .line{
     display: flex;
     white-space: nowrap;
-     animation: marquee 10s linear infinite alternate;
+     animation: marquee 2s linear infinite alternate;
+     width: 50px;
+     height:200px;
+     background-color: #e0e0e0;
   }
 
   .shape {
@@ -244,11 +252,11 @@ main{
     height: 100dvh;
     display: flex;
     align-items: start;
-   
+    background-color: var(--color-bg);
     justify-content: center;
  background-color: var(--color-bg);
      clip-path: circle(100% at 50% 50%);
-    
+     
   
     
     .wrapper{
