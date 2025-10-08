@@ -79,23 +79,28 @@ main{
     .line-container {
   position: fixed;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   bottom: 10px;
   left: 0;
   width: 100dvw;
-  border: 2px solid red;
   overflow: hidden;
- z-index: 1;
+   z-index: -1;
+  
  background-color: transparent;
- opacity: 0.1;
+
 
   .line{
-    display: flex;
+  
     white-space: nowrap;
-     animation: marquee 2s linear infinite alternate;
+     animation: marquee 5s linear infinite alternate;
      width: 50px;
-     height:200px;
+     height:270px;
+     opacity: 0.3;
+    
      background-color: #e0e0e0;
+    
   }
 
   .shape {
@@ -252,11 +257,30 @@ main{
     height: 100dvh;
     display: flex;
     align-items: start;
-    background-color: var(--color-bg);
     justify-content: center;
- background-color: var(--color-bg);
      clip-path: circle(100% at 50% 50%);
-     
+     position: sticky;
+     top: 0;
+     left: 0;
+     z-index: 1;
+
+
+
+     .mouse-float {
+  position: absolute;
+  width:300px;
+  height: auto;
+  border-radius: 20px;
+  pointer-events: none;
+
+  transform: translate(-50%, -50%);
+  transition: 0.4s ;
+   mix-blend-mode:difference;
+  opacity: 0;
+  z-index: 3;
+
+ 
+}
   
     
     .wrapper{
@@ -328,6 +352,7 @@ main{
         display: flex;
         align-items: center;
         flex-wrap: nowrap;
+     
       
         opacity: 1;
        
@@ -344,6 +369,8 @@ main{
         background-size: cover;
         object-fit: cover;
         filter: grayscale(1);
+       z-index: 2;
+
        
     
 
@@ -360,8 +387,11 @@ main{
         background-size: cover;
         object-fit: cover;
         transition: 0.5s ease-in-out;
-       
-       
+        z-index: 2;
+        mix-blend-mode: hard-light;
+        filter: grayscale(1);
+        
+
         
         }
 
@@ -395,7 +425,7 @@ main{
         bottom: 0;
         width: 100%;
         height: 20%;
-       
+     z-index: 10;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -412,6 +442,7 @@ main{
          align-items: center;
           justify-content: center;
           line-height: 2.5rem;
+      
          
           gap: 1.5rem;
 
@@ -444,33 +475,45 @@ main{
         }
       
 
-        .button-container{
-          display: flex;
-           padding: 1rem;
-          gap: 2rem;
-          align-items: center;
-          justify-content: center;
-        
-  
-          .resume{
-            padding: 0.8rem 3rem;
-            font-size: 1rem;
-            text-align: center;
-            text-transform: capitalize;
-            background-color: #d47f20;
-            border-radius: 10px;
-            border: none;
-            color: #e0e0e0;
-           cursor: pointer;
+      .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
 
+  .resume {
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--color-text);
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-text) 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 
-           &:nth-child(2){
-             background-color: transparent;
-             border: 1px solid #e0e0e0;
-           }
-          
-          }
-        }
+    &:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, var(--color-text) 0%, var(--color-bg) 100%);
+      color: var(--color-bg);
+    }
+
+    /* Second button (contact) */
+    &:nth-child(2) {
+      background: transparent;
+      border: 2px solid var(--color-text);
+      color: var(--color-text);
+
+      &:hover {
+        background: var(--color-text);
+        color: var(--color-bg);
+      }
+    }
+  }
+}
+
       }
 
 

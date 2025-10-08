@@ -68,6 +68,39 @@ navLinks.forEach(link => {
 
 // wave text 
 
+
+gsap.to('.line-container',{
+  scrollTrigger:{
+    trigger:'.line-container',
+    scrub:1.5,
+    start:"center center",
+   
+  },
+
+  scale:3,
+  height:"400px",
+  opacity:0,
+  y:-300
+})
+
+
+
+const hero = document.getElementById("hero");
+  const floatImg = hero.querySelector(".mouse-float");
+
+  // Move image with mouse
+  hero.addEventListener("mousemove", (e) => {
+   
+    const x = e.clientX 
+    const y = e.clientY 
+
+    floatImg.style.left = `${x}px`;
+    floatImg.style.top = `${y}px`;
+    floatImg.style.opacity = "1";
+    
+  });
+
+
 // Split text into spans
 
 gsap.to(".hero", {
