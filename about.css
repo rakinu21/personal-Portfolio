@@ -90,8 +90,8 @@
 
           @media (max-width: 767px){
 
-                font-size: 8rem;
-                line-height: 8rem;
+                font-size: 6rem;
+                line-height: 6rem;
               }
     }
     
@@ -129,7 +129,7 @@
     @media (max-width: 767px){
 
               padding: 3rem 0;
-              height: 60vh;
+              height: 70vh;
               }
    
 

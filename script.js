@@ -206,7 +206,7 @@ gsap.fromTo(".project-text",
     y: -800,                  // smaller offset = less jumpy
     fontSize: "20vw",
     lineHeight: "21vw",
-    letterSpacing: "-10px",
+    letterSpacing: "-4px",
     background: "#fff",
       invalidateOnRefresh: true
   }, 
@@ -215,8 +215,8 @@ gsap.fromTo(".project-text",
     fontSize: "15vw",
     lineHeight: "21vw",
     background: "#fff",
-
-    ease: "power2.out",       // smooth easing
+   
+    ease: "ease",       // smooth easing
     scrollTrigger: {
       trigger: ".project-text",
       start: "top 80%",       // start earlier

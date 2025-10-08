@@ -46,25 +46,36 @@
  top: 0;
  left: 0;
   width: 100%;
-  min-height: 100vh;
+  height: 100dvh;
   background-color: var(--color-bg);
   padding: 2rem;
  
+ @media (max-width: 767px){
 
+             max-height: 80dvh;
+           
+              }
   .project-tag-text {
    
     height: 10rem;
     width: inherit;
- 
     text-align: center;
+
+    
+      
+    
     .project-text {
       font-family: var(--secondary-font);
       font-size: 10vw;
       color: var(--color-bg);
       font-weight: 700;
       line-height: 10rem;
-    
       
+       @media (max-width: 767px){
+          letter-spacing: 10px;
+        }
+  
+        
     }
   }
 
@@ -85,12 +96,17 @@
     align-items: center;
   padding-right: 10rem;
     perspective: 2500px;   /* 👈 allows 3D depth */
+
+  @media (max-width: 767px){
+
+         gap: 0.9rem;
+        }
   }
 
   .project-card {
     flex: 0 0 auto;
     height: 500px;
-    min-width: 400px;
+   
     width: 400px;
     background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
     font-family: var(--secondary-font);
@@ -104,6 +120,18 @@
     transform-style: preserve-3d;
     
     cursor: pointer;
+
+       @media (min-width: 768px) and (max-width: 1024px) {
+            width: 340px;
+            height: 450px;
+       }
+
+    @media (max-width: 767px){
+
+            width: 200px;
+            height: 340px;
+            padding: 0.5rem 0.5rem;
+          }
      
     /* Hover: lift up and tilt */
     &:hover {
@@ -119,10 +147,23 @@
    
       padding: 0.4rem 0.8rem;
       border-radius: 0.5rem;
+
       display: flex;
       margin-bottom: 1rem;
       backdrop-filter: blur(6px);
       width: 100%;
+
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+             padding: 0 0;
+       }
+
+      @media (max-width: 767px){
+
+           padding: 0 0;
+        }
+
+          
       
       
       .index{
@@ -135,6 +176,20 @@
         padding: 30px;
         font-size: 4rem;
         border-radius: 10px;
+
+          @media (min-width: 768px) and (max-width: 1024px) {
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+       }
+
+        @media (max-width: 767px){
+
+              font-size: 1rem;
+              width: 30px;
+              height: 30px;
+              padding: 10px;
+              }
       }
 
     }
@@ -144,6 +199,17 @@
       line-height: 3rem;
       margin-bottom: 0.75rem;
       font-family: var(--secondary-font);
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+           font-size: 2rem;
+           line-height: 1.9rem;
+       }
+
+      @media (max-width: 767px){
+
+              font-size: 1.2rem;
+              line-height: 1rem;
+              }
       }
 
     p {
@@ -151,6 +217,16 @@
       opacity: 0.85;
       margin-bottom: 1.5rem;
       line-height: 1.4;
+
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+           font-size: 1rem;
+       }
+
+      @media (max-width: 767px){
+
+              font-size: 0.7rem;
+              }
     }
 
     .projectbtn {
@@ -164,8 +240,18 @@
       border-radius: 0.7rem;
   
       transition: all 0.5s ease-in-out;
-  
 
+        @media (min-width: 768px) and (max-width: 1024px) {
+            padding: 0.6rem 1.9rem;
+            font-size: 0.8rem;
+       }
+  
+     @media (max-width: 767px){
+
+              padding: 0.6rem 1.7rem;
+              font-size: 0.5rem;
+              
+              }
       &:hover {
      
        color: var(--color-text);
