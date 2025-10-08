@@ -87,6 +87,12 @@
           letter-spacing: 5px;
           -webkit-text-stroke: 1px var(--color-text);
           font-weight: 100;
+
+          @media (max-width: 767px){
+
+                font-size: 8rem;
+                line-height: 8rem;
+              }
     }
     
   }
@@ -114,21 +120,40 @@
     background-color: #0d0d0d;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content:flex-start;
     flex-direction: column;
     z-index: 2;
-    flex-wrap: wrap;
+    
     padding: 3rem 6rem;
+
+    @media (max-width: 767px){
+
+              padding: 3rem 0;
+              height: 60vh;
+              }
    
 
     .name{
       font-size: 5vw;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       text-align: center;
       text-transform: capitalize;
        font-family: var(--secondary-font);
        line-height: 4.5vw;
         transition: all 0.5s ease-in-out;
-        width: 100%;
+      
+
+        @media (max-width: 767px){
+
+                font-size: 3em;
+                line-height: 3rem;
+                width: 100%;
+                align-items:center;
+                
+       }
       
     }
 
@@ -140,27 +165,49 @@
       font-style: italic;
       text-align: center;
       width: 100%;
+
+      @media (max-width: 767px){
+
+                margin-top: 0.5rem;
+                padding: 0;
+                font-size: 1.2rem;
+              }
     }
 
 
       .left-text{
-        
-               
-    
+
         text-align: center;
-
-       
-        width: 800px;
-
+        padding: 0 12rem;
         line-height: 1.4vw;
         border-radius: 10px; 
         font-size: 1rem;
         transition: all 0.6s ease-in-out;
+
+       @media (min-width: 768px) and (max-width: 1024px) {
+               max-width: 100%;
+               padding: 2rem 2rem;
+            
+
+               line-height: 1.4rem;
+           }
       
         
         span{
           color: #d47f20;
         }
+
+   
+
+
+        @media (max-width: 767px){
+
+                font-size: 0.9rem;
+                line-height: 1rem;
+                padding: 2rem 2rem;
+                width: 100%;
+                
+       }
 
       
       }
